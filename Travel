@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Accessible Adventures: Travel agency specializing in accessible travel for people with disabilities.">
+    <title>Accessible Adventures - Inclusive Travel for Everyone</title>
+    
+    <!-- Improved Accessibility Styles -->
+    <style>
+        :root {
+            /* High contrast color palette */
+            --primary-color: #0055a5;
+            --secondary-color: #ffffff;
+            --text-color: #000000;
+            --background-color: #ffffff;
+            
+            /* Improved typography */
+            --base-font-size: 16px;
+            --line-height: 1.5;
+        }
+
+        /* Enhanced focus states */
+        *:focus {
+            outline: 3px solid #4a90e2;
+            outline-offset: 2px;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: var(--line-height);
+            color: var(--text-color);
+            background-color: var(--background-color);
+            margin: 0;
+            padding: 0;
+            font-size: var(--base-font-size);
+        }
+
+        /* Improved navigation */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #000;
+            color: white;
+            padding: 8px;
+            z-index: 100;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+
+        nav {
+            background: var(--primary-color);
+        }
+
+        nav a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            padding: 10px;
+            display: inline-block;
+        }
+
+        nav a:hover,
+        nav a:focus {
+            text-decoration: underline;
+            background-color: rgba(255,255,255,0.2);
+        }
+
+        /* Improved typography and readability */
+        h1, h2, h3 {
+            color: var(--primary-color);
+            line-height: 1.2;
+        }
+
+        /* Form improvements */
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        input, 
+        textarea, 
+        button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+            font-size: var(--base-font-size);
+        }
+
+        button {
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover,
+        button:focus {
+            background-color: #003a70;
+        }
+
+        /* Responsive images */
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Print styles */
+        @media print {
+            body {
+                font-size: 12pt;
+                line-height: 1.5;
+                color: #000;
+                background: #fff;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip to main content link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header role="banner">
+        <h1>Accessible Adventures</h1>
+        <p>Your Gateway to Accessible Travel</p>
+    </header>
+
+    <nav role="navigation">
+        <a href="#home">Home</a>
+        <a href="#destinations">Destinations</a>
+        <a href="#services">Services</a>
+        <a href="#about">About Us</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <main id="main-content" role="main">
+        <section id="home" aria-labelledby="home-title">
+            <h2 id="home-title">Travel for Everyone</h2>
+            <p>Explore the world with confidence. Accessible Adventures is here to make travel inclusive for all.</p>
+            <button aria-describedby="cta-description" class="cta">Plan Your Trip</button>
+            <p id="cta-description" class="sr-only">Click to start planning an accessible vacation tailored to your needs</p>
+        </section>
+
+        <section id="destinations" aria-labelledby="destinations-title">
+            <h2 id="destinations-title">Explore Accessible Destinations</h2>
+            <p>Discover destinations tailored to your needs, from wheelchair-accessible beaches to sensory-friendly nature trails.</p>
+            <div class="gallery">
+                <img src="https://via.placeholder.com/300x200" alt="Wheelchair-accessible beach with smooth paths and beach wheelchair" aria-describedby="beach-desc">
+                <p id="beach-desc" class="sr-only">Beach with wide, paved paths and a specially designed beach wheelchair</p>
+                
+                <img src="https://via.placeholder.com/300x200" alt="City skyline with accessible public transit" aria-describedby="city-desc">
+                <p id="city-desc" class="sr-only">Urban landscape showing low-floor buses and tactile paving for visually impaired travelers</p>
+            </div>
+        </section>
+
+        <section id="services" aria-labelledby="services-title">
+            <h2 id="services-title">Our Services</h2>
+            <p>We offer a range of services to ensure your trip is seamless and enjoyable.</p>
+            <ul>
+                <li><strong>Pre-Trip Consultation:</strong> Personalized trip planning with accessibility experts</li>
+                <li><strong>Accessible Accommodations:</strong> Hotels with roll-in showers, grab bars, and visual alert systems</li>
+                <li><strong>On-the-Go Support:</strong> 24/7 assistance with trained accessibility specialists</li>
+                <li><strong>Equipment Rentals:</strong> Mobility aids, communication devices, and adaptive equipment</li>
+                <li><strong>Custom Tours:</strong> Inclusive experiences with comprehensive accessibility support</li>
+            </ul>
+        </section>
+
+        <section id="contact" aria-labelledby="contact-title">
+            <h2 id="contact-title">Contact Us</h2>
+            <p>Have questions or need assistance? Reach out to us.</p>
+            <form>
+                <label for="name">Full Name (Required)</label>
+                <input type="text" id="name" name="name" required aria-required="true">
+
+                <label for="email">Email Address (Required)</label>
+                <input type="email" id="email" name="email" required aria-required="true">
+
+                <label for="phone">Phone Number (Optional)</label>
+                <input type="tel" id="phone" name="phone">
+
+                <label for="message">Your Message (Required)</label>
+                <textarea id="message" name="message" rows="5" required aria-required="true"></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <p>&copy; 2024 Accessible Adventures. Committed to Inclusive Travel.</p>
+        <nav>
+            <a href="/privacy">Privacy Policy</a>
+            <a href="/terms">Terms of Service</a>
+            <a href="/accessibility">Accessibility Statement</a>
+        </nav>
+    </footer>
+
+    <script>
+        // Basic form validation
+        document.querySelector('form').addEventListener('submit', function(event) {
+            const requiredFields = this.querySelectorAll('[required]');
+            let isValid = true;
+
+            requiredFields.forEach(field => {
+                if (!field.value.trim()) {
+                    isValid = false;
+                    field.setAttribute('aria-invalid', 'true');
+                } else {
+                    field.removeAttribute('aria-invalid');
+                }
+            });
+
+            if (!isValid) {
+                event.preventDefault();
+                alert('Please fill out all required fields.');
+            }
+        });
+    </script>
+</body>
+</html>
